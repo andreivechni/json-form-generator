@@ -1,0 +1,15 @@
+@import "../../Styles/vars.scss";
+
+.button {
+  background-color: $transparent-shade;
+  border: 0;
+  padding: 10px;
+  color: $neon-green;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff;
+}

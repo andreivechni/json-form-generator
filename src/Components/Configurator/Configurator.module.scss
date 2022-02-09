@@ -1,0 +1,25 @@
+@import "../../Styles/vars.scss";
+
+.root {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.inputContainer {
+  height: 450px;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+.error {
+  font-weight: bold;
+  font-size: 18px;
+  color: $danger-red;
+  display: flex;
+  align-items: center;
+}

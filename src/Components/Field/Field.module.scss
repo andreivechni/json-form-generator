@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  height: 100%;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.radio,
+.checkbox {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}

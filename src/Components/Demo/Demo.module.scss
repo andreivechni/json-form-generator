@@ -1,0 +1,30 @@
+@import "../../Styles/vars.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.header {
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 350px;
+  overflow-y: scroll;
+  padding: 25px;
+  box-shadow: 0 0 1rem 0 $transparent-shade;
+  border-radius: 5px;
+  background-color: $transparent-grey;
+  color: rgba(30, 59, 10, 0.692);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

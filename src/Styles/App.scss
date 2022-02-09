@@ -1,0 +1,46 @@
+@import "../Styles/vars.scss";
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(179.43deg, #004550 11.23%, #00b492 215.73%);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Roboto;
+  font-weight: 100;
+}
+
+input,
+textarea {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(30, 59, 10, 0.692);
+  box-shadow: 0 0 1rem 0 $transparent-shade;
+  border: 0;
+  padding: 15px;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $transparent-shade;
+  height: 30px;
+  border-radius: 10px;
+  border: 5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
