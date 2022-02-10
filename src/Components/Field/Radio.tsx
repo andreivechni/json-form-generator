@@ -1,11 +1,11 @@
 import React from "react";
 import { useField } from "./Field";
 
-type Props = {
+type RadioProps = {
   checked?: boolean;
 };
 
-const Radio = ({ checked }: Props) => {
+const Radio = ({ checked }: RadioProps) => {
   const { name } = useField();
 
   return (

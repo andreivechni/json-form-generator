@@ -1,10 +1,10 @@
 import React from "react";
 
-type Props = {
+type NumberFieldProps = {
   name?: string;
 };
 
-const NumberField = ({ name }: Props) => {
+const NumberField = ({ name }: NumberFieldProps) => {
   return <input name={name} type="number" />;
 };
 

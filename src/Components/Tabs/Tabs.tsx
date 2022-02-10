@@ -4,11 +4,11 @@ import cn from "classnames";
 import css from "./Tabs.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Props = {
+type TabsProps = {
   children: ReactNode;
 };
 
-const Tabs = ({ children }: Props) => {
+const Tabs = ({ children }: TabsProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const tabs = Children.toArray(children);

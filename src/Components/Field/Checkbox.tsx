@@ -1,10 +1,10 @@
 import React from "react";
 
-type Props = {
+type CheckboxProps = {
   checked?: boolean;
 };
 
-const Checkbox = ({ checked = false }: Props) => {
+const Checkbox = ({ checked = false }: CheckboxProps) => {
   return <input checked={checked} type="checkbox" />;
 };
 

@@ -1,11 +1,11 @@
 import React from "react";
 import css from "./Layout.module.scss";
 
-type Props = {
+type LayoutProps = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return <div className={css.root}>{children}</div>;
 };
 
