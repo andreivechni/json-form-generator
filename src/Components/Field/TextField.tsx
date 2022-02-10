@@ -1,11 +1,6 @@
 import React from "react";
 
-type TextFieldProps = {
-  name?: string;
-  onChange?: () => void;
-};
-
-const TextField = ({ name, onChange }: TextFieldProps) => {
+const TextField = () => {
   return <input type="text" />;
 };
 

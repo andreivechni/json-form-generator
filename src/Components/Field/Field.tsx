@@ -70,7 +70,7 @@ const Field = ({
         {type === FieldTypes.NUMBER && <NumberField></NumberField>}
         {type === FieldTypes.TEXT_AREA && <TextArea></TextArea>}
         {type === FieldTypes.CHECKBOX && (
-          <Checkbox checked={checked}></Checkbox>
+          <Checkbox></Checkbox>
         )}
         {type === FieldTypes.DATE && <DateField></DateField>}
         {type === FieldTypes.RADIO && <Radio checked={checked}></Radio>}
