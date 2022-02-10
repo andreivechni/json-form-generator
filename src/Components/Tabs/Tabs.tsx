@@ -13,7 +13,9 @@ const Tabs = ({ children }: TabsProps) => {
 
   const tabs = Children.toArray(children);
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
+  // eslint-disable-next-line react/prop-types
   const labels = tabs.map(({ props }: { props: TabProps }) => props.label);
 
   if (!tabs.length) return null;

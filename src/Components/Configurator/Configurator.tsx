@@ -5,29 +5,42 @@ import Button from "../Button";
 import json5 from "json5";
 import { motion, AnimatePresence } from "framer-motion";
 import { Config } from "../../Types";
+import capitalize from "../../Utils/capitalize";
+import validate from "../../Utils/validate";
 
-const ERROR_TIMEOUT = 7 * 1000;
+const ERROR_TIMEOUT = 10 * 1000;
 
 type ConfiguratorProps = {
+  config: Config | undefined;
   setConfig: Dispatch<SetStateAction<Config | undefined>>;
 };
 
-const Configurator = ({ setConfig }: ConfiguratorProps) => {
-  const [configInput, setConfigInput] = useState("");
+const Configurator = ({ config, setConfig }: ConfiguratorProps) => {
+  const stringifiedConfig = config ? JSON.stringify(config, null, 2) : "";
+  const [configInput, setConfigInput] = useState(stringifiedConfig);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    setTimeout(() => setError(""), ERROR_TIMEOUT);
-  }, [error]);
+    const id = setTimeout(() => {
+      setError("");
+      setSuccess("");
+      return () => {
+        clearTimeout(id);
+      };
+    }, ERROR_TIMEOUT);
+  }, [error, success]);
 
   const handleApply = () => {
     try {
-      const parsed = json5.parse(configInput);
+      const parsed: Config = json5.parse(configInput);
+      validate(parsed);
       setConfigInput(JSON.stringify(parsed, null, 2));
       setConfig(parsed);
+      setSuccess("Great, check out your result!");
     } catch (error) {
       if (error instanceof Error) {
-        setError(error.message);
+        setError(capitalize(error.message));
       }
     }
   };
@@ -45,9 +58,8 @@ const Configurator = ({ setConfig }: ConfiguratorProps) => {
       </div>
       <div className={css.controls}>
         <AnimatePresence>
-          {error && (
-            <ErrorMessage>Seem not like a valid JSON for me...</ErrorMessage>
-          )}
+          {error && !success && <ErrorMessage>{error}</ErrorMessage>}
+          {success && !error && <SuccessMessage>{success}</SuccessMessage>}
         </AnimatePresence>
         <Button onClick={handleApply}>Apply</Button>
       </div>
@@ -55,17 +67,30 @@ const Configurator = ({ setConfig }: ConfiguratorProps) => {
   );
 };
 
-type ErrorMessageProps = {
+type MessageProps = {
   children: React.ReactNode;
 };
 
-const ErrorMessage = ({ children }: ErrorMessageProps) => {
+const ErrorMessage = ({ children }: MessageProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className={css.error}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const SuccessMessage = ({ children }: MessageProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={css.success}
     >
       {children}
     </motion.div>

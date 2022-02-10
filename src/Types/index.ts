@@ -1,7 +1,7 @@
 type Controls = {
   text: string;
 };
-type Fields = {
+type Items = {
   type: string;
   name: string;
   label: string;
@@ -11,14 +11,14 @@ type Fields = {
 type DemoProps = {
   config: {
     header: string;
-    fields: Fields[];
+    items: Items[];
     controls: Controls[];
   };
 };
 
 type Config = {
   header: string;
-  fields: Fields[];
+  items: Items[];
   controls: Controls[];
 };
 

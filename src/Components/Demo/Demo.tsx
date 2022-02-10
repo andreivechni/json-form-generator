@@ -3,14 +3,14 @@ import Field from "../Field";
 import css from "./Demo.module.scss";
 import Button from "../Button";
 import { DemoProps } from "../../Types";
-import { capitalize } from "../../Utils/capitalize";
+import capitalize from "../../Utils/capitalize";
 
 const Demo = ({ config }: DemoProps) => {
   return (
     <div className={css.root}>
       {config.header && <div className={css.header}>{config.header}</div>}
       <form className={css.form}>
-        {config.fields.map((field) => {
+        {config.items.map((field) => {
           return (
             <Field
               key={field.name}

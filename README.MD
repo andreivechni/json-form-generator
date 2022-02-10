@@ -2,7 +2,7 @@ Sample object:
 
 {
   header: "Sample Form",
-  fields: [
+  items: [
     {
       name: "count",
       label: "count",
@@ -16,11 +16,6 @@ Sample object:
     {
       name: "radio",
       label: "radio option 2",
-      type: "radio",
-    },
-    {
-      name: "radio",
-      label: "radio option 3",
       type: "radio",
       checked: true,
     },

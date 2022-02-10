@@ -14,7 +14,7 @@ function App() {
       <div className="container">
         <Tabs>
           <Tab label="Configure">
-            <Configurator setConfig={setConfig}></Configurator>
+            <Configurator config={config} setConfig={setConfig}></Configurator>
           </Tab>
 
           <Tab label="Result">

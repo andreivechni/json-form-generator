@@ -5,7 +5,7 @@ type CheckboxProps = {
 };
 
 const Checkbox = ({ checked = false }: CheckboxProps) => {
-  return <input checked={checked} type="checkbox" />;
+  return <input  type="checkbox" />;
 };
 
 export default Checkbox;

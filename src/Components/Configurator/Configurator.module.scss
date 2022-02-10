@@ -16,6 +16,14 @@
   gap: 25px;
 }
 
+.success {
+  font-weight: bold;
+  font-size: 18px;
+  color: $neon-green;
+  display: flex;
+  align-items: center;
+}
+
 .error {
   font-weight: bold;
   font-size: 18px;
