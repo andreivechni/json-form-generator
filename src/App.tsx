@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Tabs, { Tab } from "./Components/Tabs";
 import Demo from "./Components/Demo";
 import Configurator from "./Components/Configurator/Configurator";

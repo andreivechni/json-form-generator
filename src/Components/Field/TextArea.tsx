@@ -2,10 +2,13 @@ import React from "react";
 import { useField } from "./Field";
 import css from "./TextArea.module.scss";
 
-type Props = {};
-
-const TextArea = (props: Props) => {
-  const { fieldValue, onChange = () => {} } = useField();
+const TextArea = () => {
+  const {
+    fieldValue,
+    onChange = () => {
+      return;
+    },
+  } = useField();
   return (
     <textarea
       onChange={(e) => {

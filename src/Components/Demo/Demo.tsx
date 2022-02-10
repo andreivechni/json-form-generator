@@ -13,6 +13,7 @@ const Demo = ({ config }: DemoProps) => {
         {config.fields.map((field) => {
           return (
             <Field
+              key={field.name}
               checked={field.checked}
               type={field.type}
               name={field.name}
@@ -24,7 +25,7 @@ const Demo = ({ config }: DemoProps) => {
 
       <div className={css.controls}>
         {config.controls.map((control) => (
-          <Button>{control.text}</Button>
+          <Button key={control.text}>{control.text}</Button>
         ))}
       </div>
     </div>

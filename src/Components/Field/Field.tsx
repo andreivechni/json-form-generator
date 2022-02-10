@@ -38,7 +38,9 @@ type ContextProps = {
 };
 
 const FieldContext = createContext<ContextProps>({
-  onChange: () => {},
+  onChange: () => {
+    return;
+  },
 });
 
 const Field = ({

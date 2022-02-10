@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 
-type Props = {};
-
-const DateField = (props: Props) => {
+const DateField = () => {
   return <input type="date" />;
 };
 
