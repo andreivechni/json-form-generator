@@ -12,6 +12,7 @@
 }
 
 .label {
+  position: relative;
   padding: 10px;
   cursor: pointer;
   font-size: 24px;
@@ -22,10 +23,6 @@
   margin-left: -1px;
 }
 
-.activeTab {
-  background-color: $transparent-shade;
-}
-
 .tabContainer {
   background-color: $transparent-shade;
   margin-top: 0px;
@@ -33,4 +30,14 @@
   height: 500px;
   width: 400px;
   overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $transparent-shade;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
