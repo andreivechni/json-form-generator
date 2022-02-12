@@ -23,17 +23,26 @@ const Tabs = ({ children }: TabsProps) => {
   return (
     <div className={css.root}>
       <div className={css.tabList}>
-        {labels.map((label, i) => (
-          <div
-            key={i}
-            className={cn(css.label, { [css.activeTab]: i === activeIndex })}
-            onClick={() => {
-              setActiveIndex(i);
-            }}
-          >
-            {label}
-          </div>
-        ))}
+        {labels.map((label, i) => {
+          const isActive = i === activeIndex;
+          return (
+            <div
+              key={i}
+              className={cn(css.label, { [css.activeTab]: isActive })}
+              onClick={() => {
+                setActiveIndex(i);
+              }}
+            >
+              {label}
+              {isActive && (
+                <motion.div
+                  className={css.background}
+                  layoutId="background"
+                ></motion.div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <div className={css.tabContainer}>
